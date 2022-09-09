@@ -1,12 +1,7 @@
-#!/bin/bash
 #include <stdio.h>
-
 /**
- * main - print the string in the put fuction
- *
- * Description: using the main fuction
- * this program prints "Programming is like building a multilingual puzzle"
- * Return: 0
+ * Description: main - Prints out a string to stdout.
+ * Return: 0 if success.
  */
 int main(void)
 {
