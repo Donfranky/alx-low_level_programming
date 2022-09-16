@@ -1,44 +1,66 @@
 #include <stdio.h>
+<<<<<<< HEAD
+int main()
+{
+	int n = 1;
+	int mul3;
+	int show;
 
+	do
+	{
+		mul3 = 3 * n;
+
+		if (n == mul3)
+		{
+			show = 333;
+		printf("%d Fizz", show);
+		}
+		n++;
+	}
+	while (n <= 100);
+	printf("\n");
+	printf("%d ", n);
+	return 0;
+=======
 /**
- * main - program that prints either number
- * or fizz or buzz or fizzBuzz
- *
- *
- * Return: returns 0
+ * main - It is Fizz-Buzz test
+ * Return: print results
  */
-
 int main(void)
 {
-	int num = 1;
+	int n;
 
-	while (num++ < 100)
+	for (n = 1; n <= 100; n++)
 	{
-		if ((num % 3 == 0) && (num % 5 == 0))
+		if (n % 3 == 0 || n % 5 == 0)
 		{
-			printf("FizzBuzz ");
-		}
-		else if ((num % 3) == 0)
-		{
-			printf("Fizz ");
-		}
-		else if ((num % 5) == 0)
-		{
-			if (num != 100)
+			if (n % 3 == 0 && n % 5 == 0)
 			{
-				printf("Buzz ");
+				printf("FizzBuzz ");
 			}
-			else
+
+			if (n % 3 == 0 && n % 5 != 0)
 			{
-				printf("Buzz");
+				printf("Fizz ");
+			}
+			if (n % 5 == 0 && n % 3 != 0)
+			{
+				if (n == 100)
+				{
+					printf("Buzz");
+				}
+				else
+				{
+					printf("Buzz ");
+				}
 			}
 		}
 		else
 		{
-			printf("%d ", num);
+			printf("%d ", n);
 		}
 	}
 	printf("\n");
-
 	return (0);
+>>>>>>> bcbbdddacb50fc929e423b95e635ca0231cccbdd
 }
