@@ -2,17 +2,17 @@
 
 /**
  * _puts - print a string
- * @str:pointer char
- * return:void
+ * @str: pointer char
+ * return: void
  */
+
 void _puts(char *str)
 {
 	int i;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		putchar(str[i]);
+		_putchar(str[i]);
 	}
-_putchar('\n');
-return;
+	_putchar('\n');
 }
