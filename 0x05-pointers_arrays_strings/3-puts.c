@@ -3,16 +3,13 @@
 /**
  * _puts - writes a function that prints a string, followed by a line
  * @str: input string
- * return:void
+ * Description: puts a string
  */
 void _puts(char *str)
 {
-	int i;
-
-	for (i = 0; str[i] != '\0'; i++)
+	while (*str)
 	{
-		putchar(str[i]);
+		_putchar(*str++);
 	}
-_putchar('\n');
-return;
+	_putchar('\n');
 }
