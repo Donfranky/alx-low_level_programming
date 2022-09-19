@@ -2,8 +2,7 @@
 
 /**
  * print_rev - print a string
- * @s:pointer char
- * return:void
+ * @s: pointer char
  */
 void print_rev(char *s)
 {
