@@ -1,46 +1,53 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
- * argstostr - concatenates all the arguments of your program
- *@ac: number of arguments
- *@av: arguments
- * Return: a pointer to a new string
+ *len - returns lenght of str
+ *@str: string counted
+ * Return: returns the lenght
  */
+int len(char *str)
+{
+		int len = 0
+
+		if (str != NULL)
+		{
+			while (str[len])
+				len++;
+		}
+	return (len);
+}
+/**
+ * argstostr - a function that concatenates all the arguments of your program
+ * @ac: count of args passed to the function
+ * @av: array of arguments
+ *
+ * Return: pointer to the new string
+ */
+
 char *argstostr(int ac, char **av)
 {
-	int i;
-	int j;
-	char *p = NULL;
-	int k;
-	int ext;
+	char *new_string = NULL;
+	int k = 0, i = ac, j, sum = 0, temp = 0;
 
-	k = 0;
-	ext = 0;
 	if (ac == 0 || av == NULL)
 		return (NULL);
-	for (i = 0; i < ac; i++)
+	while (ac--)
+		sum += (len(av[ac]) + 1);
+	if (new_string != NULL)
 	{
-		for (j = 0; av[i][j] != '\0'; j++)
+		while (k < i)
 		{
-			ext++;
-		}
-	}
-
-	p = (char *)malloc(ext + ac + 1 * sizeof(char));
-	if (p == NULL)
-		return (NULL);
-	for (i = 0; i < ac; i++)
-	{
-		for (j = 0; av[i][j] != '\0'; j++)
-		{
-			p[k] = av[i][j];
+			for (j = 0; av[k][j] != '\0'; j++)
+				new_string[j + temp] = av[k][j];
+			new_string[temp + j] = '\n';
+			temp += (j + 1);
 			k++;
 		}
-		p[k] = '\n';
-		k++;
+		new_string[temp] = '\0';
 	}
-	p[k] = '\0';
-	return (p);
+	else
+	{
+		return (NULL);
+	}
+	return (new_string);
 }
