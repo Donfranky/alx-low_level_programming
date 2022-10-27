@@ -1,24 +1,24 @@
-/*
- * File: 4-clear_bit.c
- * Auth: Franklin Eze
- */
-
 #include "main.h"
 
 /**
- * clear_bit - Sets the value of a bit at a given index to 0.
- * @n: A pointer to the bit.
- * @index: The index to set the value at - indices start at 0.
- *
- * Return: If an error occurs - -1.
- *         Otherwise - 1.
+ * flip_bits - returns the number of bits you would need to
+ * flip to get from one number to another.
+ * @n: number.
+ * @m: another.
+ * Return: number of bit to flip from one number to another.
  */
-int clear_bit(unsigned long int *n, unsigned int index)
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	if (index >= (sizeof(unsigned long int) * 8))
-		return (-1);
+	unsigned long int num = n ^ m;
+	unsigned int pichu = 0;
+	int len = (sizeof(num) * 8);
 
-	*n &= ~(1 << index);
-
-	return (1);
+	while (len >= 0)
+	{
+		if (num & 1)
+			pichu++;
+		num = num >> 1;
+		len--;
+	}
+	return (pichu);
 }
