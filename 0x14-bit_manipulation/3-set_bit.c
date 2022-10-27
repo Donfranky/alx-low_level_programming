@@ -1,6 +1,6 @@
 /*
  * File: 3-set_bit.c
- * Author: Framklin 
+ * Author: Framklin Eze
  */
 
 #include "main.h"
